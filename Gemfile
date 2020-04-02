@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gems for synchronizes
 gem 'ox'
+gem 'whenever', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
