@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_142059) do
+ActiveRecord::Schema.define(version: 2020_04_02_210518) do
+
+  create_table "amounts", force: :cascade do |t|
+    t.decimal "price"
+    t.string "period"
+    t.integer "property_id"
+    t.integer "currency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["currency_id"], name: "index_amounts_on_currency_id"
+    t.index ["property_id"], name: "index_amounts_on_property_id"
+  end
 
   create_table "currencies", force: :cascade do |t|
     t.string "code", null: false
@@ -35,6 +46,9 @@ ActiveRecord::Schema.define(version: 2019_03_14_142059) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "external_id"
+    t.json "features"
+    t.json "images"
     t.index ["currency_id"], name: "index_properties_on_currency_id"
     t.index ["property_type_id"], name: "index_properties_on_property_type_id"
     t.index ["user_id"], name: "index_properties_on_user_id"

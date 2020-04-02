@@ -1,4 +1,5 @@
 class Property < ApplicationRecord
+  has_many   :amounts
   belongs_to :property_type
   belongs_to :currency
   belongs_to :user
