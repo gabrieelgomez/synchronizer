@@ -1,5 +1,5 @@
 class PropertyType < ApplicationRecord
-  TYPES = ['Casa', 'Oficina', 'Departamento', 'Local']
+  TYPES = %i[Casa Oficina Departamento Local]
 
   validates :name, presence: true, uniqueness: true
   validate :validate_name
