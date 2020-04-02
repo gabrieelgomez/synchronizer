@@ -2,6 +2,7 @@ class Property::Getter
   attr_reader :object, :property
 
   def initialize(object)
+    return Property.new unless object.is_a?(Hash)
     @object = Property::Mapper.new(object)
     find_and_initialize
     set_currency

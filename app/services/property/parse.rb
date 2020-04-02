@@ -29,6 +29,7 @@ class Property::Parse < Ox::Sax
       properties = @node.dig(:properties, :property)
       p "Processing #{properties.size} properties"
       properties.map do |property|
+        next unless property.is_a?(Hash)
         Property::Setter.set(property)
       end
     end

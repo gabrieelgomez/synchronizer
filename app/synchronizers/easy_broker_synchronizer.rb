@@ -19,7 +19,7 @@ class EasyBrokerSynchronizer
   private
 
   def set_document
-    # open('./doc/easybroker_MX.xml').read
-    Zlib::GzipReader.new(open(STAGING_URL)).read
+    open('./doc/easybroker_MX.xml').read
+    # Zlib::GzipReader.new(open(STAGING_URL)).read
   end
 end
