@@ -10,6 +10,4 @@ RSpec.describe PropertyType, type: :model do
     end
   end
 
-
-
 end
